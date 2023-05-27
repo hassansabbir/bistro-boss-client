@@ -157,6 +157,7 @@
         "recipe": "Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
         "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/7/30/0/wu0303h_cinnamon-baked-french-toast-with-blueberries_s4x3.jpg.rend.hgtvcom.441.331.suffix/1485880483811.jpeg",
         "category": "popular",
+        "chefRecommended": "true",
         "price": 14.5
     },
     {
@@ -173,6 +174,7 @@
         "recipe": "Chargrilled fresh tuna steak (served medium rare) on classic Niçoise salad with French beans.",
         "image": "https://images.immediate.co.uk/production/volatile/sites/30/2021/11/diabolo-mockail-440-x400-c795884.jpg?quality=90&resize=556,505",
         "category": "drinks",
+        "chefRecommended": "true",
         "price": 14.7
     },
     {
@@ -293,6 +295,7 @@
         "recipe": "Chargrilled fresh tuna steak (served medium rare) on classic Niçoise salad with French beans",
         "image": "https://gypsyplate.com/wp-content/uploads/2021/10/peanut-butter-pie-12-1023x1536-1-600x901.jpg",
         "category": "dessert",
+        "chefRecommended": "true",
         "price": 14.7
     },
     {
@@ -341,6 +344,7 @@
         "recipe": "Pan roasted pork belly with gratin potato, braised Savoy cabbage, apples, thyme and calvados jus",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Pizza-3007395.jpg/800px-Pizza-3007395.jpg",
         "category": "pizza",
+        "chefRecommended": "true",
         "price": 13.5
     },
     {
@@ -381,6 +385,7 @@
         "recipe": "Chargrilled chicken with avocado, baby gem lettuce, baby spinach, shallots, French beans, walnuts, croutons and a mustard dressing",
         "image": "https://realfood.tesco.com/media/images/RFO-1400x919-CobbSalad-8f25842c-d030-47fc-9336-fd16327830c6-0-1400x919.jpg",
         "category": "salad",
+        "chefRecommended": "true",
         "price": 14.5
     },
     {
@@ -445,6 +450,7 @@
         "recipe": "Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
         "image": "https://c8.alamy.com/comp/2A1BEXY/asparagus-soup-in-white-bowl-closeup-food-photography-2A1BEXY.jpg",
         "category": "soup",
+        "chefRecommended": "true",
         "price": 14.5
     },
     {

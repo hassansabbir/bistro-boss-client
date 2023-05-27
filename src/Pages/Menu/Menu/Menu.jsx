@@ -38,26 +38,26 @@ const Menu = () => {
       <MenuCategory
         items={desserts}
         img={dessertImg}
-        title="DESSERT"
-        details="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        title="dessert"
+        details=" Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
       ></MenuCategory>
       {/* Pizza */}
       <MenuCategory
         items={pizza}
         img={pizzaImg}
-        title="PIZZA"
+        title="pizza"
         details="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
       ></MenuCategory>
       <MenuCategory
         items={salad}
         img={saladImg}
-        title="SALAD"
+        title="salad"
         details="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
       ></MenuCategory>
       <MenuCategory
         items={soup}
         img={soupImg}
-        title="SOUP"
+        title="soup"
         details="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
       ></MenuCategory>
     </div>
