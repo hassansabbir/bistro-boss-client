@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../.././../providers/AuthProvider";
+import { FaShoppingCart } from "react-icons/fa";
+import useCart from "../../../hooks/useCart";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [cart] = useCart();
 
   const handleLogOut = () => {
     logOut()
@@ -22,8 +25,32 @@ const Navbar = () => {
       <li>
         <Link to="/order/salad">Order Food</Link>
       </li>
+      <li>
+        <Link to="/secret">secret</Link>
+      </li>
+      <li>
+        <Link to="/">
+          <div className="indicator">
+            <span className="indicator-item badge badge-secondary">
+              {cart?.length || 0}
+            </span>
+            <button className="btn btn-circle">
+              <FaShoppingCart className="w-[25px] h-[25px]" />
+            </button>
+          </div>
+        </Link>
+      </li>
+      <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+        {user && (
+          <img
+            className="w-8 h-8 md:w-12 md:h-12 rounded-full"
+            src={user.photoURL}
+            alt=""
+          />
+        )}
+      </div>
 
-      {user ? (
+      {user?.email ? (
         <>
           <button onClick={handleLogOut} className="btn btn-active btn-ghost">
             Logout
@@ -36,8 +63,6 @@ const Navbar = () => {
           </li>
         </>
       )}
-
-      <a className="btn">Get started</a>
     </>
   );
 
@@ -71,8 +96,8 @@ const Navbar = () => {
           </div>
           <a className="btn btn-ghost normal-case text-xl">Bistro Boss</a>
         </div>
-        <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navOptions}</ul>
+        <div className="navbar hidden lg:flex">
+          <ul className="menu menu-horizontal space-x-3 px-1">{navOptions}</ul>
         </div>
       </div>
     </>
