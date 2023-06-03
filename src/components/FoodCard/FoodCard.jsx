@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import useCart from "../../hooks/useCart";
 
 const FoodCard = ({ item }) => {
-  const { name, image, category, recipe, _id } = item;
+  const { name, image, price, category, recipe, _id } = item;
   const { user } = useContext(AuthContext);
   const [, refetch] = useCart();
   const navigate = useNavigate();
@@ -19,6 +19,7 @@ const FoodCard = ({ item }) => {
         name,
         image,
         category,
+        price,
         email: user.email,
       };
       fetch("http://localhost:5000/carts", {

@@ -29,7 +29,7 @@ const Navbar = () => {
         <Link to="/secret">secret</Link>
       </li>
       <li>
-        <Link to="/">
+        <Link to="/dashboard/mycart">
           <div className="indicator">
             <span className="indicator-item badge badge-secondary">
               {cart?.length || 0}
