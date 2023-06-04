@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const SignUp = () => {
   const { createUser, updateUserProfile, logOut } = useContext(AuthContext);
@@ -17,29 +18,40 @@ const SignUp = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
+
     createUser(data.email, data.password)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+
         updateUserProfile(data.name, data.photoUrl)
           .then(() => {
-            console.log("user profile updated");
-            reset();
-            Swal.fire({
-              position: "top-end",
-              icon: "success",
-              title: "User created successfully",
-              showConfirmButton: false,
-              timer: 1500,
-            });
-            reset();
-            logOut()
-              .then(() => {
-                navigate("/login");
-              })
-              .catch((err) => {
-                console.log(err);
+            const saveUser = { name: data.name, email: data.email };
+            fetch("http://localhost:5000/users", {
+              method: "POST",
+              headers: { "content-type": "application/json" },
+              body: JSON.stringify(saveUser),
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.insertedId) {
+                  reset();
+                  Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "User created successfully",
+                    showConfirmButton: false,
+                    timer: 1500,
+                  });
+                  logOut()
+                    .then(() => {
+                      navigate("/login");
+                    })
+                    .catch((err) => {
+                      console.log(err);
+                    });
+                }
               });
           })
           .catch((err) => console.log(err));
@@ -147,6 +159,7 @@ const SignUp = () => {
                 </button>
               </div>
             </form>
+            <SocialLogin></SocialLogin>
             <p className="text-lg mb-5 mx-auto">
               Already have an account?{" "}
               <Link to="/login" className="font-bold underline">
