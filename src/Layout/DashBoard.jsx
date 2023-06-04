@@ -12,12 +12,14 @@ import { GiForkKnifeSpoon } from "react-icons/gi";
 import { LuPhoneCall } from "react-icons/lu";
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../hooks/useCart";
+import useAdmin from "../hooks/useAdmin";
 
 const DashBoard = () => {
   const [cart] = useCart();
 
   //TODO: load data from the server to have dynamic isAdmin based on data.
-  const isAdmin = true;
+  // const isAdmin = true;
+  const [isAdmin] = useAdmin();
 
   return (
     <div className="drawer drawer-mobile">
@@ -38,22 +40,22 @@ const DashBoard = () => {
             <>
               {" "}
               <li>
-                <NavLink to="/dashboard/home">
+                <NavLink to="/dashboard/homej">
                   <FaHome /> Admin Home
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/home">
+                <NavLink to="/dashboard/homefs">
                   <GiForkKnifeSpoon /> Add Items
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/home">
+                <NavLink to="/dashboard/homeah">
                   <FaBars /> Manage Items
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/home">
+                <NavLink to="/dashboard/homea43yh">
                   <FaBook /> Manage Bookings
                 </NavLink>
               </li>

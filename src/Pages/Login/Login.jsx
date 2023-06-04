@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
-  const [disabled, setDisabled] = useState(true);
+  // const [disabled, setDisabled] = useState(true);
   const { signIn } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -50,9 +50,9 @@ const Login = () => {
     const user_captcha_value = e.target.value;
     console.log();
     if (validateCaptcha(user_captcha_value)) {
-      setDisabled(false);
+      // setDisabled(false);
     } else {
-      setDisabled(true);
+      // setDisabled(true);
     }
   };
 
