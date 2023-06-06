@@ -45,8 +45,8 @@ const DashBoard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/homefs">
-                  <GiForkKnifeSpoon /> Add Items
+                <NavLink to="/dashboard/addAnItem">
+                  <GiForkKnifeSpoon /> Add an Items
                 </NavLink>
               </li>
               <li>

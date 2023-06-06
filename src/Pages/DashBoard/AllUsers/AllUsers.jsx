@@ -2,11 +2,14 @@ import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
 import { FaTrashAlt, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const AllUsers = () => {
+  const [axiosSecure] = useAxiosSecure();
   const { data: users = [], refetch } = useQuery(["Users"], async () => {
-    const res = await fetch("http://localhost:5000/users");
-    return res.json();
+    const res = await axiosSecure.get("/users");
+    return res.data;
   });
 
   const handleMakeAdmin = (user) => {
@@ -28,13 +31,14 @@ const AllUsers = () => {
       });
   };
 
-  const handleDelete = (user) => {};
+  const handleDelete = () => {};
 
   return (
     <div className="w-full">
       <Helmet>
         <title>All Users || Bistro Boss</title>
       </Helmet>
+      <SectionTitle subHeading="How Many?" heading="Manage All Users" />
       <h3 className="text-3xl text-center h-14 font-semibold">
         Total User: {users.length}
       </h3>
